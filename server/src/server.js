@@ -9,14 +9,20 @@ const { connectDB } = await import('./config/db.js');
 const PORT = process.env.PORT || 5000;
 
 const startServer = async () => {
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 AgriSense AI Server running on port ${PORT}`);
+    console.log(`Health check: /api/health`);
+  });
+
   try {
     await connectDB();
-    app.listen(PORT, '0.0.0.0', () => {
-      console.log(`Server running on port ${PORT}`);
-    });
   } catch (error) {
-    console.error('Failed to start server:', error.message);
-    process.exit(1);
+    console.error('----------------------------------------------------');
+    console.error('⚠️  DATABASE NOT CONNECTED:');
+    console.error(`Reason: ${error.message}`);
+    console.error('Action: Set MONGO_URI in Render Dashboard -> Environment tab');
+    console.error('Example: mongodb+srv://<user>:<password>@cluster0...mongodb.net/agrisense-ai');
+    console.error('----------------------------------------------------');
   }
 };
 
