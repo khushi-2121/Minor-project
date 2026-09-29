@@ -2,6 +2,8 @@
   "name": "agrisense-ai",
   "private": true,
   "scripts": {
-    "build": "npm --prefix client ci && npm --prefix client run build"
+    "build": "npm --prefix server install",
+    "start": "npm --prefix server start",
+    "build:client": "npm --prefix client ci && npm --prefix client run build"
   }
 }
