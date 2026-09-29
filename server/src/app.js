@@ -28,7 +28,7 @@ const allowedOrigins = [process.env.CLIENT_URL, ...(process.env.NODE_ENV === 'pr
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (!origin || !process.env.CLIENT_URL || process.env.CLIENT_URL === '*' || allowedOrigins.includes(origin)) {
         callback(null, true);
         return;
       }

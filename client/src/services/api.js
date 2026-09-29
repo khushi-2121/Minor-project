@@ -1,10 +1,6 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL;
-
-if (!API_URL) {
-  throw new Error('VITE_API_URL must be configured before starting the client');
-}
+const API_URL = import.meta.env.VITE_API_URL || 'https://minor-project-sy8v.onrender.com/api';
 
 // Create axios instance
 const api = axios.create({
