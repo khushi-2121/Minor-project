@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch src/server.js",
+    "build": "echo 'No build required for server'",
     "start": "node src/server.js",
     "test": "node --test",
     "create-admin": "node src/scripts/createAdmin.js"
