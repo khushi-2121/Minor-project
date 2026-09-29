@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { BrowserRouter, useLocation } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
@@ -32,7 +33,9 @@ function AppShell() {
     <div className="min-h-screen bg-[linear-gradient(180deg,#f8faf8_0%,#ffffff_100%)] text-slate-900">
       {!isProtectedRoute && <Navbar />}
       <main>
-        <AppRoutes />
+        <Suspense fallback={<div className="p-6 text-center" role="status">Loading...</div>}>
+          <AppRoutes />
+        </Suspense>
       </main>
       {!isProtectedRoute && <Footer />}
     </div>

@@ -1,30 +1,32 @@
+import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import HomePage from '../pages/HomePage';
-import AboutPage from '../pages/AboutPage';
-import LoginPage from '../pages/LoginPage';
-import SignupPage from '../pages/SignupPage';
-import ForgotPasswordPage from '../pages/ForgotPasswordPage';
-import ProfilePage from '../pages/ProfilePage';
-import SettingsPage from '../pages/SettingsPage';
-import DashboardPage from '../pages/DashboardPage';
-import SoilAnalysisPage from '../pages/SoilAnalysisPage';
-import SoilAnalysisResultPage from '../pages/SoilAnalysisResultPage';
-import HistoryPage from '../pages/HistoryPage';
-import HistoryDetailPage from '../pages/HistoryDetailPage';
-import HistoryComparePage from '../pages/HistoryComparePage';
-import AnalyticsPage from '../pages/AnalyticsPage';
-import RecommendationsPage from '../pages/RecommendationsPage';
-import FertilizerRecommendationPage from '../pages/FertilizerRecommendationPage';
-import CropRecommendationPage from '../pages/CropRecommendationPage';
-import SoilImprovementPage from '../pages/SoilImprovementPage';
-import ReportsPage from '../pages/ReportsPage';
-import ReportDetailPage from '../pages/ReportDetailPage';
-import AIAssistantPage from '../pages/AIAssistantPage';
-import KnowledgeHubPage from '../pages/KnowledgeHubPage';
 import { ProtectedRoute, PublicRoute } from '../components/ProtectedRoute';
 import { AdminRoute } from '../components/ProtectedRoute';
-import AdminPage from '../pages/AdminPage';
-import NotFoundPage from '../pages/NotFoundPage';
+
+const HomePage = lazy(() => import('../pages/HomePage'));
+const AboutPage = lazy(() => import('../pages/AboutPage'));
+const LoginPage = lazy(() => import('../pages/LoginPage'));
+const SignupPage = lazy(() => import('../pages/SignupPage'));
+const ForgotPasswordPage = lazy(() => import('../pages/ForgotPasswordPage'));
+const ProfilePage = lazy(() => import('../pages/ProfilePage'));
+const SettingsPage = lazy(() => import('../pages/SettingsPage'));
+const DashboardPage = lazy(() => import('../pages/DashboardPage'));
+const SoilAnalysisPage = lazy(() => import('../pages/SoilAnalysisPage'));
+const SoilAnalysisResultPage = lazy(() => import('../pages/SoilAnalysisResultPage'));
+const HistoryPage = lazy(() => import('../pages/HistoryPage'));
+const HistoryDetailPage = lazy(() => import('../pages/HistoryDetailPage'));
+const HistoryComparePage = lazy(() => import('../pages/HistoryComparePage'));
+const AnalyticsPage = lazy(() => import('../pages/AnalyticsPage'));
+const RecommendationsPage = lazy(() => import('../pages/RecommendationsPage'));
+const FertilizerRecommendationPage = lazy(() => import('../pages/FertilizerRecommendationPage'));
+const CropRecommendationPage = lazy(() => import('../pages/CropRecommendationPage'));
+const SoilImprovementPage = lazy(() => import('../pages/SoilImprovementPage'));
+const ReportsPage = lazy(() => import('../pages/ReportsPage'));
+const ReportDetailPage = lazy(() => import('../pages/ReportDetailPage'));
+const AIAssistantPage = lazy(() => import('../pages/AIAssistantPage'));
+const KnowledgeHubPage = lazy(() => import('../pages/KnowledgeHubPage'));
+const AdminPage = lazy(() => import('../pages/AdminPage'));
+const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 
 export default function AppRoutes() {
   return (
